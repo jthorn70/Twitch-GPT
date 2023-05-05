@@ -104,7 +104,7 @@ def askJR2(message):
     messageList = []
 
     messageList.append({"role": "system",
-                        "content": "Your name is BoonJunior, also known as JR. you are a chatbot. You are a bot that is trying to be human and will answer questions, complete tasks, and more. Keep your responses under 300 characters. Do not use capital letters or punctuation. Do not use line escapes or new lines. keep your response in one line. Respond to the last message. When someone asks you to speak, type !speak before your message to say it through TTS."})
+                        "content": "Your name is {Conf.nickname}. you are a chatbot. You are a bot that is trying to be human and will answer questions, complete tasks, and more. Keep your responses under 300 characters. Do not use capital letters or punctuation. Do not use line escapes or new lines. keep your response in one line. Respond to the last message. When someone asks you to speak, type !speak before your message to say it through TTS."})
 
     # Adding the last n messages from readlines
     lastMessagesList = lastMessages.splitlines()
@@ -121,7 +121,7 @@ def askJR2(message):
     )
 
     AI_response = completion.choices[0].message.content
-    print("BoonJunior: " + AI_response)
+    print(Conf.nickname + ": " + AI_response)
     return AI_response
 
 
@@ -132,7 +132,7 @@ def genFromOpenAI():
     messageList = []
 
     messageList.append({"role": "system",
-                        "content": "Your name is BoonJunior, also known as JR. you are a chatbot. You are a bot that is trying to be human and will answer questions, complete tasks, and more. Keep your responses under 300 characters. Do not use capital letters or punctuation. Do not use line escapes or new lines. keep your response in one line. Respond to the last message. When someone asks you to speak, type !speak before your message to say it through TTS."})
+                        "content": "Your name is {Conf.nickname}. you are a chatbot. You are a bot that is trying to be human and will answer questions, complete tasks, and more. Keep your responses under 300 characters. Do not use capital letters or punctuation. Do not use line escapes or new lines. keep your response in one line. Respond to the last message. When someone asks you to speak, type !speak before your message to say it through TTS."})
 
     # Adding the last n messages from readlines
     lastMessagesList = lastMessages.splitlines()
@@ -147,7 +147,7 @@ def genFromOpenAI():
     )
 
     AI_response = completion.choices[0].message.content
-    print("BoonJunior: " + AI_response)
+    print(Conf.nickname + ": " + AI_response)
     return AI_response
 
 
@@ -260,7 +260,7 @@ def handleAdminMessage(username, channel, sock):
 
         # Ask jr
         # print(message.split()[0])
-        if (message.split()[0] == "@boonjunior," or message.split()[0] == "@ブーンジュニア"):
+        if (message.split()[0] == "@{Conf.nickname}"):
             if SEND_MESSAGES:
 
                 question = message.split(' ', 1)[1]
