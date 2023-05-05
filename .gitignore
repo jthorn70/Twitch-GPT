@@ -157,3 +157,4 @@ conf.py
 pyvenv.cfg
 Pipfile
 jbooogieLogs.txt
+Pipfile.lock
