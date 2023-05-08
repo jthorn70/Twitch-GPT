@@ -46,5 +46,8 @@ There are a few commands you can use to configure the bot while it is running:
 
 By Default the bot is configured to use the GPT-4 api endpoint. If you dont have access to the GPT-4 api, you can change it in the main file for now. 
 
+## Credit
+- stream listening / image grab from https://github.com/adrz/twitch-realtime-handler
+
 ## Contributions
 Contributions to this project are welcome. If you find a bug or want to add a new feature, feel free to create a pull request.
